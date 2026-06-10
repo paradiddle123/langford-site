@@ -1,0 +1,84 @@
+---
+layout: base.njk
+permalink: /
+---
+<section class="hero">
+  <!-- Rebonds: an accelerating percussion line, after Xenakis -->
+  <svg class="rebonds" viewBox="0 0 600 64" preserveAspectRatio="none" aria-hidden="true">
+    <g stroke="#00356B">
+      <line x1="4"   y1="64" x2="4"   y2="8"/>
+      <line x1="150" y1="64" x2="150" y2="14"/>
+      <line x1="268" y1="64" x2="268" y2="12"/>
+      <line x1="360" y1="64" x2="360" y2="16"/>
+      <line x1="432" y1="64" x2="432" y2="12"/>
+      <line x1="487" y1="64" x2="487" y2="14"/>
+      <line x1="530" y1="64" x2="530" y2="10"/>
+      <line x1="596" y1="64" x2="596" y2="4"/>
+    </g>
+    <g stroke="#286DC0">
+      <line x1="58"  y1="64" x2="58"  y2="34"/>
+      <line x1="106" y1="64" x2="106" y2="40"/>
+      <line x1="192" y1="64" x2="192" y2="36"/>
+      <line x1="232" y1="64" x2="232" y2="42"/>
+      <line x1="300" y1="64" x2="300" y2="38"/>
+      <line x1="332" y1="64" x2="332" y2="44"/>
+      <line x1="386" y1="64" x2="386" y2="40"/>
+      <line x1="410" y1="64" x2="410" y2="44"/>
+      <line x1="452" y1="64" x2="452" y2="40"/>
+      <line x1="470" y1="64" x2="470" y2="46"/>
+      <line x1="502" y1="64" x2="502" y2="42"/>
+      <line x1="516" y1="64" x2="516" y2="46"/>
+    </g>
+    <g stroke="#63AAFF">
+      <line x1="542" y1="64" x2="542" y2="40"/>
+      <line x1="552" y1="64" x2="552" y2="44"/>
+      <line x1="561" y1="64" x2="561" y2="42"/>
+      <line x1="569" y1="64" x2="569" y2="46"/>
+      <line x1="576" y1="64" x2="576" y2="44"/>
+      <line x1="582" y1="64" x2="582" y2="47"/>
+      <line x1="587" y1="64" x2="587" y2="45"/>
+      <line x1="591" y1="64" x2="591" y2="48"/>
+    </g>
+  </svg>
+
+  <div class="hero-row">
+    <div class="hero-text">
+      <h1>{{ site.name }}</h1>
+      <p class="role">{{ site.role }}</p>
+    </div>
+    <!-- Replace src with /images/headshot.jpg once you add your new photo to src/images/ -->
+    <img class="headshot" src="https://law.yale.edu/sites/default/files/styles/content_285x393_/public/Groups/Clinics/Media%20Freedom%20and%20Information%20Access%20Clinic/langford_john.jpg?itok=3rck2mS2" alt="Headshot of John Langford">
+  </div>
+  <p class="lede">I work on issues at the heart of a free press and a functioning democracy — <strong>the First Amendment, news-gathering, free expression, and disinformation</strong>. This site is where I write about them.</p>
+</section>
+
+<section id="writing">
+  <div class="section-label">
+    <span class="glyph">§</span>
+    <span class="mono">Writing</span>
+  </div>
+
+  <ul class="post-list">
+    {%- for post in collections.post | reverse %}
+    <li>
+      <a class="post-link" href="{{ post.url }}">
+        <time datetime="{{ post.date | isoDateShort }}">{{ post.date | readableDate }}</time>
+        <span class="post-title">{{ post.data.title }}</span>
+        {%- if post.data.description %}
+        <span class="post-sub">{{ post.data.description }}</span>
+        {%- endif %}
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section id="about" class="about">
+  <div class="section-label">
+    <span class="glyph">§</span>
+    <span class="mono">About</span>
+  </div>
+  <p>John Langford is a Visiting Clinical Associate Professor of Law at Yale Law School and counsel at Protect Democracy. At Protect Democracy, he focuses primarily on issues related to the First Amendment, news-gathering, free expression, and disinformation.</p>
+  <p>Before joining Protect Democracy, Langford was a Clinical Lecturer in Law, Associate Research Scholar in Law, and the Floyd Abrams Fellow and Staff Attorney for the Media Freedom and Information Access Clinic at Yale Law School. He previously clerked for the Honorable Robin S. Rosenbaum on the United States Court of Appeals for the Eleventh Circuit and worked as a litigation associate at Wilmer Cutler Pickering Hale and Dorr LLP.</p>
+  <p>At Yale, he teaches in the Media Freedom and Information Access Clinic and the Lowenstein International Human Rights Clinic. He holds a J.D. from Yale Law School and a B.M. and B.A. from Oberlin College.</p>
+</section>

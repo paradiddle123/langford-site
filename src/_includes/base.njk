@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% if title %}{{ title }} · {{ site.name }}{% else %}{{ site.name }}{% endif %}</title>
+<meta name="description" content="{{ description or site.description }}">
+<link rel="alternate" type="application/atom+xml" title="{{ site.name }}" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- TeX Gyre Schola: a free, faithful Century Schoolbook (family name 'TeXGyreSchola') -->
+<link href="https://fonts.cdnfonts.com/css/tex-gyre-schola" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <a class="wordmark" href="/">{{ site.name }}</a>
+    <nav>
+      <a href="/#writing">Writing</a>
+      <a href="/#about">About</a>
+      <a href="mailto:{{ site.email }}">Contact</a>
+    </nav>
+  </header>
+
+  {{ content | safe }}
+
+  <footer>
+    <span class="mono">© {% year %} {{ site.name }}</span>
+    <a class="mono footer-mail" href="mailto:{{ site.email }}">{{ site.email }}</a>
+  </footer>
+
+</div>
+</body>
+</html>
