@@ -1,3 +1,39 @@
+/* Century Schoolbook, self-hosted via TeX Gyre Schola (GUST Font License).
+   local() lets anyone with the real Century Schoolbook installed use it;
+   the relative ../fonts/ path survives the GitHub Pages path prefix. */
+@font-face {
+  font-family: "TeXGyreSchola";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Century Schoolbook"), local("TeXGyreSchola"),
+       url("../fonts/texgyreschola-regular.woff") format("woff");
+}
+@font-face {
+  font-family: "TeXGyreSchola";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Century Schoolbook Italic"), local("TeXGyreSchola-Italic"),
+       url("../fonts/texgyreschola-italic.woff") format("woff");
+}
+@font-face {
+  font-family: "TeXGyreSchola";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Century Schoolbook Bold"), local("TeXGyreSchola-Bold"),
+       url("../fonts/texgyreschola-bold.woff") format("woff");
+}
+@font-face {
+  font-family: "TeXGyreSchola";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Century Schoolbook Bold Italic"), local("TeXGyreSchola-BoldItalic"),
+       url("../fonts/texgyreschola-bolditalic.woff") format("woff");
+}
+
 :root {
   --paper: #FCFBF8;
   --ink: #1D1D1B;

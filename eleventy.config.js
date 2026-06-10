@@ -7,6 +7,7 @@ export default function (eleventyConfig) {
 
   // Copy CSS and images straight through to the built site
   eleventyConfig.addPassthroughCopy({ "src/css": "css" });
+  eleventyConfig.addPassthroughCopy({ "src/fonts": "fonts" });
   eleventyConfig.addPassthroughCopy({ "src/images": "images" });
 
   // "June 1, 2026" style dates
