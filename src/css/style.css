@@ -152,6 +152,17 @@ h1 {
 }
 .hero .lede strong { font-weight: 700; }
 
+/* ---------- Body text: justified, with hyphenation to avoid rivers ---------- */
+.hero .lede,
+.about p,
+.post-body p,
+.post-body li,
+.post-body blockquote {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
 /* ---------- Sections ---------- */
 section { padding-top: 3.5rem; }
 .section-label {
