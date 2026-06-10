@@ -34,18 +34,32 @@ npm start          # opens a live preview at http://localhost:8080
 
 ## Deploy (free options)
 
-**Netlify (easiest):**
-1. Put this folder in a GitHub repository
-2. Sign in to netlify.com with GitHub and click "Add new site → Import an existing project"
-3. Pick the repo — the included `netlify.toml` handles the rest
-4. Every `git push` republishes the site automatically
+**GitHub Pages (already set up):** this folder is a git repository with a
+deploy workflow at `.github/workflows/deploy.yml`. To go live:
+
+1. Create an empty repository at [github.com/new](https://github.com/new)
+   (public, no README — name it `langford-site`, or `<username>.github.io`
+   to get the site at the root URL)
+2. In this folder, connect and push:
+
+   ```
+   git remote add origin https://github.com/<username>/<repo>.git
+   git push -u origin main
+   ```
+
+3. On GitHub, open the repo's **Settings → Pages** and set **Source** to
+   **GitHub Actions**
+4. Every `git push` rebuilds and republishes the site (the Actions tab shows
+   progress); it appears at `https://<username>.github.io/<repo>/`
+
+**Netlify:**
+1. Sign in to netlify.com with GitHub and click "Add new site → Import an existing project"
+2. Pick the repo — the included `netlify.toml` handles the rest
 
 **Vercel** works the same way (build command `npm run build`, output directory `_site`).
 
-**GitHub Pages** also works; ask Claude Code to set up the Actions workflow.
-
-After deploying, set your real domain in `src/_data/site.json` (`"url"`) so the
-RSS feed links correctly.
+After deploying, set your real site address in `src/_data/site.json` (`"url"`)
+so the RSS feed links correctly.
 
 ## Things you'll want to change
 
